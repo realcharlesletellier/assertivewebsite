@@ -10,7 +10,7 @@ import TestimonialsSection from "@components/sections/testimonials/TestimonialsS
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
 import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
-import heroImage from "@images/hero-image.avif";
+import heroImage from "@images/assertive-logo.avif";
 import faqs from "@data/faqs.json";
 import features from "@data/features.json";
 import pricing from "@data/pricing.json";
@@ -34,8 +34,9 @@ const avatarSrcs: Array<string> = [
     url="https://github.com/mearashadowfax/ScrewFast"
   />
 
+  <!-- Add src={heroImage} -->
   <HeroSection
-    title=`Accelerate development with <span style="color: #83c5a3;">Assertive AI</span>`
+    title=`Accelerate development with <span style="color: #79BBBE;">Assertive AI</span>`
     subTitle="Shifting the focus from testing to building by generating thousands of unit tests at scale with reliable AI."
     primaryBtn="Try Now"
     primaryBtnURL="/products"
@@ -46,7 +47,6 @@ const avatarSrcs: Array<string> = [
     rating=`<span class="font-bold">4.8</span> / 5`
     starCount={4}
     reviews=`From Over <span class="font-bold">12.8k</span> Reviews`
-    src={heroImage}
     alt="Stack of ScrewFast product boxes containing assorted hardware tools"
   />
 
@@ -56,10 +56,10 @@ const avatarSrcs: Array<string> = [
   />
 
   <FeaturesGeneral
-    title="Meeting Industry Demands"
-    subTitle="At ScrewFast, we tackle the unique challenges encountered in the hardware and construction sectors. From cutting-edge tools to expert services, we're dedicated to helping you overcome obstacles and achieve your goals."
+    title="Building faster"
+    subTitle="Assertive AI addresses the critical challenge of test-related technical debt, empowering businesses to swiftly overcome it and prevent its recurrence, enabling teams to focus on what truly matters— driving development and fostering innovation."
     src={featureImage}
-    alt="ScrewFast products in floating boxes"
+    alt="Image Not Available"
     features={features}
   />
 
