@@ -2,14 +2,12 @@
 // Import the necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
 import HeroSection from "@components/sections/landing/HeroSection.astro";
-import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
 import ClientsSection from "@components/sections/landing/ClientsSection.astro";
 import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
 import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
 import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
-import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
 import heroImage from "@images/assertive-logo.avif";
 import faqs from "@data/faqs.json";
 import features from "@data/features.json";
@@ -28,15 +26,10 @@ const avatarSrcs: Array<string> = [
 ---
 
 <MainLayout>
-  <AnnouncementBanner
-    btnId="dismiss-button"
-    btnTitle="Explore ScrewFast on GitHub"
-    url="https://github.com/mearashadowfax/ScrewFast"
-  />
 
   <!-- Add src={heroImage} -->
   <HeroSection
-    title=`Accelerate development with <span style="color: #79BBBE;">Assertive AI</span>`
+    title=`Accelerate development with <span style="color: #3E6CFF;">Assertive AI</span>`
     subTitle="Shifting the focus from testing to building by generating thousands of unit tests at scale with reliable AI."
     primaryBtn="Try Now"
     primaryBtnURL="/products"
@@ -46,6 +39,7 @@ const avatarSrcs: Array<string> = [
     avatars={avatarSrcs}
     rating=`<span class="font-bold">4.8</span> / 5`
     starCount={4}
+    src={heroImage}
     reviews=`From Over <span class="font-bold">12.8k</span> Reviews`
     alt="Stack of ScrewFast product boxes containing assorted hardware tools"
   />
@@ -58,36 +52,34 @@ const avatarSrcs: Array<string> = [
   <FeaturesGeneral
     title="Building faster"
     subTitle="Assertive AI addresses the critical challenge of test-related technical debt, empowering businesses to swiftly overcome it and prevent its recurrence, enabling teams to focus on what truly matters— driving development and fostering innovation."
-    src={featureImage}
-    alt="Image Not Available"
     features={features}
   />
 
   <FeaturesNavs
-    title=`Customize <span class="text-yellow-500 dark:text-yellow-400">ScrewFast</span>'s offerings to perfectly suit your hardware and construction needs.`
+    title=`Empowering teams with <span class="text-[#3E6CFF]">Assertive AI</span>, allowing them to focus on building instead of fixing. Build, test, and deploy with AI you can trust.`
     tabs={[
       {
-        heading: "Cutting-Edge Tools",
+        heading: "Accelerate your Unit Testing",
         content:
-          "Empower your projects with ScrewFast's cutting-edge tools. Experience enhanced efficiency in construction management with our sophisticated automated solutions.",
+          "Writing hundreds of unit and regressions tests at scale in minutes instead of days, Assertive AI provides accurate, readable, and maintable tests with zero manual effort.",
         svg: "tools",
         src: tools,
-        alt: "Yellow and black heavy equipment on brown grass field",
+        alt: "Hundreds of tests being generated at scale with a timer",
         first: true,
       },
       {
-        heading: "Intuitive Dashboards",
+        heading: "Never push broken code again",
         content:
-          "Navigate with ease using ScrewFast's intuitive dashboards. Set up and oversee your projects seamlessly, with user-friendly interfaces designed for quick and effective workflow management.",
+          "Leverage Assertive AI's CI/CD integration to enable continuous unit testing and maintenace with every merge/pull request made.",
         svg: "dashboard",
         src: dashboard,
-        alt: "A screenshot or graphic representation of the intuitive dashboard",
+        alt: "A screenshot or graphic representation of a merging PR with tests in the background and a screenshot of Assertive Tests vs Manual to show impact.",
         second: true,
       },
       {
-        heading: "Robust Features",
+        heading: "Always meet Coverage Requirements",
         content:
-          "Minimize complexity, maximize productivity. ScrewFast's robust features are engineered to streamline your construction process, delivering results that stand out for their excellence.",
+          "Collect, monitor and analyze coverage from unit tests, profiting from Assertive's guaranteed instant increase in code coverage.",
         svg: "house",
         src: construction,
         alt: "Gray metal building frame near tower crane during daytime",
@@ -136,9 +128,4 @@ const avatarSrcs: Array<string> = [
 
   <FAQ title="Frequently<br />asked questions" faqs={faqs} />
 
-  <HeroSectionAlt
-    title="Let's Build Together"
-    subTitle="ScrewFast is an open-source template, meticulously crafted with Astro, Tailwind CSS, and Preline UI frameworks."
-    url="https://github.com/mearashadowfax/ScrewFast"
-  />
 </MainLayout>

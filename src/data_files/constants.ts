@@ -1,7 +1,7 @@
 import ogImageSrc from "@images/social.png";
 
 export const SITE = {
-  title: "Assertive",
+  title: "Assertive - Autonomous Unit Test Generation with AI",
   tagline: "Unit Testing AI",
   description: "Assertive AI offers a reliable autonomous unit testing solution for companies looking to cut costs on manual testing efforts.",
   description_short: "Assertive offers an autonomous unit testing solution to generate reliable tests at scale.",

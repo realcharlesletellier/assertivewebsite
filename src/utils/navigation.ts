@@ -9,11 +9,12 @@ const navBarLinks = [
 // An array of links for footer
 const footerLinks = [
   {
-    section: "Ecosystem",
+    section: "Product",
     links: [
+      { name: "Assertive AI", url: "#" },
+      { name: "Community Edition", url: "/blog" },
       { name: "Documentation", url: "/welcome-to-docs/" },
-      { name: "Tools & Equipment", url: "/products" },
-      { name: "Construction Services", url: "/services" },
+      { name: "Pricing", url: "#" },
     ],
   },
   {
@@ -21,8 +22,7 @@ const footerLinks = [
     links: [
       { name: "About us", url: "#" },
       { name: "Blog", url: "/blog" },
-      { name: "Careers", url: "#" },
-      { name: "Customers", url: "#" },
+      { name: "Contact", url: "#" },
     ],
   },
 ];
