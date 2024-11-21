@@ -19,10 +19,50 @@ If URL is '/' (home page), assign ID as 'home'
   id={url === "/" ? "home" : url.replace("/", "")}
   href={url}
   data-astro-prefetch
-  class="rounded-lg text-base font-medium text-neutral-600 outline-#3e6cff ring-zinc-500 hover:text-neutral-500 focus-visible:ring md:py-3 md:text-sm 2xl:text-base"
+  class="nav-link"
 >
   {name}
 </a>
+
+<style>
+/* Base styles */
+.nav-link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #4b5563; /* Neutral 600 */
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #3e6cff;
+}
+
+/* Hover underline animation */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #3e6cff;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Active state styles */
+.nav-link.active {
+  color: #3e6cff;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+</style>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -39,11 +79,7 @@ If URL is '/' (home page), assign ID as 'home'
     let nav = document.getElementById(navId);
 
     if (nav) {
-      nav.classList.remove(
-        "text-neutral-600",
-        "hover:text-neutral-500",
-      );
-      nav.classList.add("text-[#3e6cff]");
+      nav.classList.add("active");
       nav.setAttribute("aria-current", "page");
     }
   });

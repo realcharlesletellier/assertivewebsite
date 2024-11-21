@@ -1,12 +1,12 @@
 ---
-title: "Maximizing Efficiency with ScrewFast's Cutting-Edge Tools"
-description: "Innovating Construction Efficiency with Precision Tools & Support"
-author: "Jacob"
-authorImage: "@/images/blog/jacob.avif"
+title: "Assertive AI vs GPT / Copilot, pointing out the differences"
+description: "Assertive AI and LLM-based coding assistants work towards the same goal, but in very different ways"
+author: "Charles"
+authorImage: "@/images/blog/charles.avif"
 authorImageAlt: "Avatar Description"
 pubDate: 2024-02-06
 cardImage: "@/images/blog/post-1.avif"
-cardImageAlt: "Top view mechanical tools arrangement"
+cardImageAlt: "AI"
 readTime: 4
 tags: ["tools", "construction", "workflow" ]
 contents: [
