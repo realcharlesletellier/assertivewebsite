@@ -35,19 +35,20 @@ We set the language of the page to English and add classes for scrollbar and scr
     </script>
   </head>
   <body
-    class="bg-[#f0f6f8] selection:bg-[#7193ff] selection:text-neutral-700 dark:bg-neutral-800"
+    class="bg-white selection:bg-[#7193ff] selection:text-neutral-700 dark:bg-neutral-800"
   >
     <!--
     Setting up the main structure of the page.
     The Navbar is placed at the top, with a slot for the main content and FooterSection at the bottom.
     -->
-    <div class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+        <!-- Navbar placed outside of the max-width container -->
       <Navbar
-      primaryBtn="Try Now"
-      primaryBtnURL="/products"
-      secondaryBtn="Book a Demo"
-      secondaryBtnURL="/contact"
-    />
+        primaryBtn="Try Now"
+        primaryBtnURL="/products"
+        secondaryBtn="Book a Demo"
+        secondaryBtnURL="/contact"
+      />
+    <div class="mx-auto px-4 sm:px-6 lg:px-8">
       <main>
         <slot />
       </main>

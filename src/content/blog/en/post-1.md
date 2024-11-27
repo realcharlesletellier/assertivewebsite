@@ -1,6 +1,6 @@
 ---
 title: "Assertive AI vs GPT / Copilot, pointing out the differences"
-description: "Assertive AI and LLM-based coding assistants work towards the same goal, but in very different ways"
+description: "Assertive AI and LLM-based coding assistants, how are they different ?"
 author: "Charles"
 authorImage: "@/images/blog/charles.avif"
 authorImageAlt: "Avatar Description"

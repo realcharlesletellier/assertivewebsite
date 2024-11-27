@@ -4,14 +4,13 @@ import AuthBtn from "@components/ui/buttons/AuthBtn.astro";
 import ContactIconBlock from "@components/ui/blocks/ContactIconBlock.astro";
 import TextInput from "@components/ui/forms/input/TextInput.astro";
 import EmailContactInput from "@components/ui/forms/input/EmailContactInput.astro";
-import PhoneInput from "@components/ui/forms/input/PhoneInput.astro";
 import TextAreaInput from "@components/ui/forms/input/TextAreaInput.astro";
 import Icon from "@components/ui/icons/Icon.astro";
 
 // Define the variables that will be used in this component
 const title: string = "Contact us";
 const subTitle: string =
-  "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our tools and services.";
+  "Have questions or want to discuss integrating Assertive AI? Reach out, and let's discuss the perfect plan for you.";
 const formTitle: string = "Fill in the form below";
 const formSubTitle: string = "We'll get back to you in 1-2 business days.";
 ---
@@ -30,15 +29,13 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
       </p>
     </div>
 
-    <div class="mt-12 grid items-center gap-6 lg:grid-cols-2 lg:gap-16">
-      <div class="flex flex-col rounded-xl p-4 sm:p-6 lg:p-8">
-        <h2
-          class="mb-8 text-xl font-bold text-neutral-700 dark:text-neutral-300"
-        >
+    <!-- Centered Form -->
+    <div class="mt-12 flex flex-col items-center justify-center">
+      <div class="w-full max-w-lg rounded-xl p-4 sm:p-6 lg:p-8 bg-white shadow-md">
+        <h2 class="mb-8 text-xl font-bold text-neutral-700 dark:text-neutral-300">
           {formTitle}
         </h2>
-        <!-- Form for user input with various input fields.-->
-        <!-- Each field utilizes a different input component for the specific type of input (text, email, phone, and textarea)-->
+        <!-- Form for user input with various input fields -->
         <form>
           <div class="grid gap-4">
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -54,7 +51,6 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
               />
             </div>
             <EmailContactInput id="hs-email-contacts" />
-            <PhoneInput id="hs-phone-number" />
             <TextAreaInput
               id="hs-about-contacts"
               label="Details"
@@ -73,9 +69,12 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
           </div>
         </form>
       </div>
+    </div>
+  </div>
 
-      <!--ContactIconBlocks are used to display different methods of contacting, including visiting office, email, browsing knowledgebase, and FAQ.-->
-      <div class="divide-y divide-neutral-300 dark:divide-neutral-700">
+      <!--ContactIconBlocks are used to display different methods of contacting, including visiting office, email, browsing knowledgebase, and FAQ.
+      
+            <div class="divide-y divide-neutral-300 dark:divide-neutral-700">
         <ContactIconBlock
           heading="Knowledgebase"
           content="Browse through all of our knowledgebase articles."
@@ -112,7 +111,7 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
           linkURL="#"
           ><Icon name="envelopeOpen" />
         </ContactIconBlock>
-      </div>
+      </div>-->
     </div>
   </div>
 </section>

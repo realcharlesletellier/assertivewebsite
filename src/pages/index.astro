@@ -28,35 +28,34 @@ const avatarSrcs: Array<string> = [
 <MainLayout>
 
   <!-- Add src={heroImage} -->
+  <section class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
   <HeroSection
-    title=`Accelerate development with <span style="color: #3E6CFF;">Assertive AI</span>`
-    subTitle="Shifting the focus from testing to building by generating thousands of unit tests at scale with reliable AI."
+    title=`Simplify development with <span style="color: #3E6CFF;">Assertive AI</span>`
+    subTitle="Generate thousands of unit tests at scale with reliable AI."
     primaryBtn="Try Now"
     primaryBtnURL="/products"
-    secondaryBtn="Book a Demo"
+    secondaryBtn="Book a demo"
     secondaryBtnURL="/contact"
-    withReview={true}
-    avatars={avatarSrcs}
-    rating=`<span class="font-bold">4.8</span> / 5`
-    starCount={4}
-    src={heroImage}
-    reviews=`From Over <span class="font-bold">12.8k</span> Reviews`
-    alt="Stack of ScrewFast product boxes containing assorted hardware tools"
+    alt="Assertive AI Autonomous Unit Testing Tool Showcase"
   />
+</section>
 
-  <ClientsSection
+  <!--   <ClientsSection
     title="Trusted by Industry Leaders"
     subTitle="Experience the reliability chosen by industry giants."
-  />
+  /> -->
 
+  <section class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
   <FeaturesGeneral
     title="Building faster"
     subTitle="Assertive AI addresses the critical challenge of test-related technical debt, empowering businesses to swiftly overcome it and prevent its recurrence, enabling teams to focus on what truly matters— driving development and fostering innovation."
     features={features}
   />
+</section>
 
+  <section class="w-full bg-gray-100">
   <FeaturesNavs
-    title=`Empowering teams with <span class="text-[#3E6CFF]">Assertive AI</span>, allowing them to focus on building instead of fixing. Build, test, and deploy with AI you can trust.`
+    title=`Empowering teams with <span class="text-[#3E6CFF]">Assertive AI</span>, allowing them to focus on building instead of fixing.`
     tabs={[
       {
         heading: "Accelerate your Unit Testing",
@@ -86,7 +85,9 @@ const avatarSrcs: Array<string> = [
       },
     ]}
   />
+</section>
 
+<section class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
   <TestimonialsSection
     title="Fast-Track Your Projects"
     subTitle="At ScrewFast, we ensure a swift start with instant account setup. Experience the speed of construction redefined.";
@@ -102,9 +103,9 @@ const avatarSrcs: Array<string> = [
           "recovered from manual testing efforts",
       },
       {
-        count: "15.3%",
+        count: "90%",
         description:
-          "reduction in maintenance costs reported by long-term clients",
+          "higher code ",
       },
       {
         count: "2x",
@@ -112,9 +113,14 @@ const avatarSrcs: Array<string> = [
       },
     ]}
   />
+</section>
 
+<section class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
   <PricingSection pricing={pricing} />
+</section>
 
+<section class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
   <FAQ title="Frequently<br />asked questions" faqs={faqs} />
+</section>
 
 </MainLayout>
