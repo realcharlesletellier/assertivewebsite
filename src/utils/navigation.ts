@@ -1,38 +1,38 @@
 // An array of links for navigation bar
 const navBarLinks = [
   { name: "Home", url: "/" },
-  { name: "Products", url: "/products" },
-  { name: "Services", url: "/services" },
-  { name: "Blog", url: "/blog" },
+  { name: "Pricing", url: "/pricing" },
+  // { name: "Services", url: "/services" },
+  // { name: "Blog", url: "/blog" },
   { name: "Contact", url: "/contact" },
 ];
 // An array of links for footer
 const footerLinks = [
   {
-    section: "Ecosystem",
+    section: "Product",
     links: [
-      { name: "Documentation", url: "/welcome-to-docs/" },
-      { name: "Tools & Equipment", url: "/products" },
-      { name: "Construction Services", url: "/services" },
+      { name: "Assertive AI", url: "#" },
+      // { name: "Community Edition", url: "#" },
+      // { name: "Documentation", url: "/welcome-to-docs/" },
+      { name: "Pricing", url: "/pricing" },
     ],
   },
   {
     section: "Company",
     links: [
       { name: "About us", url: "#" },
-      { name: "Blog", url: "/blog" },
-      { name: "Careers", url: "#" },
-      { name: "Customers", url: "#" },
+      // { name: "Blog", url: "#" },
+      { name: "Contact", url: "/contact" },
     ],
   },
 ];
 // An object of links for social icons
 const socialLinks = {
-  facebook: "https://www.facebook.com/",
-  x: "https://twitter.com/",
-  github: "https://github.com/mearashadowfax/ScrewFast",
-  google: "https://www.google.com/",
-  slack: "https://slack.com/",
+  // facebook: "https://www.facebook.com/",
+  // x: "https://twitter.com/",
+  // github: "https://github.com/mearashadowfax/ScrewFast",
+  // google: "https://www.google.com/",
+  // slack: "https://slack.com/",
 };
 
 export default {

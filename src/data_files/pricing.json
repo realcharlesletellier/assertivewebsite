@@ -1,38 +1,52 @@
 {
-  "title": "Simple, Transparent Pricing",
-  "subTitle": "Boost efficiency with ScrewFast's clear, value-driven plans.",
+  "title": "Transparent Plans and Pricing",
+  "subTitle": "Assertive's plans are tailored to suit the various needs of developers and teams at different levels - from individual builders to large-scale enterprises.",
   "badge": "Best value",
-  "thirdOption": "Enterprise Solutions?",
-  "btnText": "Get a Custom Quote",
 
-  "starterKit": {
-    "name": "Starter Kit",
-    "description": "Best option for DIY projects",
-    "price": "49",
-    "cents": ".00",
-    "billingFrequency": "USD / monthly",
+  "individualPlan": {
+    "name": "Individual",
+    "description": "Best for individual developers and small-scale projects",
+    "price": "$30",
+    "billingFrequency": "per month",
     "features": [
-      "Key hardware tools",
-      "Access to guides & tutorials",
-      "Standard support"
+      "Test generation at Class & Method scale",
+      "100 tests per month",
+      "Standard customer support"
     ],
-    "purchaseBtnTitle": "Get the Starter Kit",
+    "purchaseBtnTitle": "Buy Now",
     "purchaseLink": "#"
   },
 
-  "professionalToolbox": {
-    "name": "Professional Toolbox",
-    "description": "Best for large scale uses",
-    "price": "89",
-    "cents": ".00",
-    "billingFrequency": "USD / monthly",
+  "teamsPlan": {
+    "name": "Teams",
+    "description": "Best for dev teams and larger scale projects",
+    "price": "$30K",
+    "billingFrequency": "per year",
     "features": [
-      "Premium tool selection",
-      "Priority support",
-      "Exclusive content & deals",
-      "Bulk order discounts"
+      "Advanced test generation for entire projects",
+      "Coverage Analytics, CI Pipeline",
+      "Unlimited tests",
+      "Up to 200k lines of code",
+      "Priority customer support"
+
     ],
-    "purchaseBtnTitle": "Get the Professional Toolbox",
-    "purchaseLink": "#"
+    "purchaseBtnTitle": "Try free for 7 days",
+    "purchaseLink": "/contact"
+  },
+
+  "enterprisePlan": {
+    "name": "Enterprise",
+    "description": "Best for large scale use",
+    "price": "Contact Us",
+    "billingFrequency": "",
+    "features": [
+      "Advanced test generation for entire enterprise projects",
+      "Coverage Analytics, CI Pipeline",
+      "Unlimited tests",
+      "Up to 750k lines of code (with option to purchase more)",
+      "Priority customer support"
+    ],
+    "purchaseBtnTitle": "Speak to an expert",
+    "purchaseLink": "/contact"
   }
 }

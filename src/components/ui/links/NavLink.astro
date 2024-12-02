@@ -19,10 +19,54 @@ If URL is '/' (home page), assign ID as 'home'
   id={url === "/" ? "home" : url.replace("/", "")}
   href={url}
   data-astro-prefetch
-  class="rounded-lg text-base font-medium text-neutral-600 outline-none ring-zinc-500 hover:text-neutral-500 focus-visible:ring dark:text-neutral-400 dark:ring-zinc-200 dark:hover:text-neutral-500 dark:focus:outline-none md:py-3 md:text-sm 2xl:text-base"
+  class="nav-link"
 >
   {name}
 </a>
+
+<style>
+/* Base styles */
+.nav-link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #4b5563; /* Neutral 600 */
+  transition: color 0.2s;
+  font-size: 1.15rem; /* Makes text larger (equivalent to 20px) */
+  font-weight: 500; /* Optional: Makes the font weight medium for better readability */
+
+
+}
+
+.nav-link:hover {
+  color: #3EB489;
+}
+
+/* Hover underline animation */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #5EC7A1;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Active state styles */
+.nav-link.active {
+  color: #5EC7A1;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+</style>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -39,13 +83,7 @@ If URL is '/' (home page), assign ID as 'home'
     let nav = document.getElementById(navId);
 
     if (nav) {
-      nav.classList.remove(
-        "text-neutral-600",
-        "dark:text-neutral-400",
-        "hover:text-neutral-500",
-        "dark:hover:text-neutral-500"
-      );
-      nav.classList.add("text-orange-400", "dark:text-orange-300");
+      nav.classList.add("active");
       nav.setAttribute("aria-current", "page");
     }
   });

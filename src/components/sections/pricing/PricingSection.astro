@@ -27,8 +27,10 @@ interface PricingSectionProps {
   pricing: {
     title: string;
     subTitle: string;
-    starterKit: Product;
-    professionalToolbox: Product;
+    individualPlan: Product;
+    teamsPlan: Product;
+    enterprisePlan: Product;
+
   };
 }
 ---
@@ -47,106 +49,116 @@ interface PricingSectionProps {
       {pricing.subTitle}
     </p>
   </div>
-  <!-- Contains two main product blocks -->
-  <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-0">
-    <!-- Starter Kit product details -->
+  <!-- Contains three main product blocks -->
+  <div class="flex flex-wrap items-center justify-center gap-4">
+    <!-- Individual product details -->
     <div
-      class="w-full rounded-xl bg-gray-800 p-6 sm:w-1/2 sm:rounded-r-none sm:p-8 lg:w-1/3"
+      class="w-full max-w-sm rounded-xl bg-neutral-100 text-neutral-800 dark:bg-white/[.075] dark:text-neutral-200 p-6 shadow-md sm:w-1/3 lg:p-8"
     >
       <div class="mb-4">
-        <h3 class="text-2xl font-bold text-neutral-100 sm:text-3xl">
-          {pricing.starterKit.name}
+        <h3 class="text-2xl font-bold sm:text-3xl">
+          {pricing.individualPlan.name}
         </h3>
-        <p class="text-indigo-300">{pricing.starterKit.description}</p>
+        <p class="text-[#5EC7A1]">
+          {pricing.individualPlan.description}
+        </p>
       </div>
 
       <div class="mb-4">
-        <span class="text-4xl font-bold text-neutral-200"
-          >{pricing.starterKit.price}</span
-        >
-        <span class="text-lg font-bold text-neutral-300"
-          >{pricing.starterKit.cents}</span
-        >
-        <span class="ms-3 text-sm text-indigo-200"
-          >{pricing.starterKit.billingFrequency}</span
-        >
+        <span class="text-4xl font-bold">{pricing.individualPlan.price}</span>
+        <span class="ms-3 text-sm text-[#5EC7A1]">
+          {pricing.individualPlan.billingFrequency}
+        </span>
       </div>
-      <!-- Features list - automatically created by mapping over `features` array -->
-      <ul class="mb-6 space-y-2 text-neutral-300">
-        {
-          pricing.starterKit.features.map((feature: string) => (
-            <li class="flex items-center gap-1.5">
-              <Icon name="checkCircle" />
-
-              <span>{feature}</span>
-            </li>
-          ))
-        }
+      <!-- Features list -->
+      <ul class="mb-6 space-y-2">
+        {pricing.individualPlan.features.map((feature: string) => (
+          <li class="flex items-center gap-1.5">
+            <Icon name="checkCircle" class="text-indigo-[#5EC7A1]" />
+            <span>{feature}</span>
+          </li>
+        ))}
       </ul>
-      <!-- CTA for purchasing the product -->
+      <!-- CTA button -->
       <a
-        href={pricing.starterKit.purchaseLink}
-        class="block rounded-lg bg-gray-500 px-8 py-3 text-center text-sm font-bold text-gray-100 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-600 focus-visible:ring active:text-gray-300 md:text-base"
-        >{pricing.starterKit.purchaseBtnTitle}</a
+        href={pricing.individualPlan.purchaseLink}
+        class="block rounded-lg bg-[#5EC7A1] text-gray-100 px-8 py-3 text-center text-sm font-bold transition hover:bg-[#3EB489] focus:ring-indigo-300 focus-visible:ring md:text-base"
       >
+        {pricing.individualPlan.purchaseBtnTitle}
+      </a>
     </div>
-    <!-- Professional Toolbox product details -->
+
+    <!-- Repeat for other plans -->
+    <!-- Teams Plan -->
     <div
-      class="w-full rounded-xl bg-gradient-to-tr from-[#FF512F] to-[#F09819] p-6 shadow-xl sm:w-1/2 sm:p-8"
+      class="w-full max-w-sm rounded-xl bg-neutral-100 text-neutral-800 dark:bg-white/[.075] dark:text-neutral-200 p-6 shadow-md sm:w-1/3 lg:p-8"
     >
-      <div
-        class="mb-4 flex flex-col items-start justify-between gap-4 lg:flex-row"
-      >
-        <div>
-          <h3 class="text-2xl font-bold text-neutral-100 sm:text-3xl">
-            {pricing.professionalToolbox.name}
-          </h3>
-          <p class="text-orange-200">{pricing.professionalToolbox.description}</p>
-        </div>
-
-        <span
-          class="order-first inline-block rounded-full bg-orange-200 bg-opacity-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-center text-orange-600 lg:order-none"
-          >{pricing.badge}</span
-        >
+      <div class="mb-4">
+        <h3 class="text-2xl font-bold sm:text-3xl">{pricing.teamsPlan.name}</h3>
+        <p class="text-[#5EC7A1]">
+          {pricing.teamsPlan.description}
+        </p>
       </div>
 
       <div class="mb-4">
-        <span class="text-6xl font-bold text-neutral-100"
-          >{pricing.professionalToolbox.price}</span
-        >
-        <span class="text-lg font-bold text-orange-100"
-          >{pricing.professionalToolbox.cents}</span
-        >
-        <span class="ms-3 text-orange-200"
-          >{pricing.professionalToolbox.billingFrequency}</span
-        >
+        <span class="text-4xl font-bold">{pricing.teamsPlan.price}</span>
+        <span class="ms-3 text-sm text-[#5EC7A1]">
+          {pricing.teamsPlan.billingFrequency}
+        </span>
       </div>
-      <!-- Features list - automatically created by mapping over `features` array -->
-      <ul class="mb-6 space-y-2 text-orange-100">
-        {
-          pricing.professionalToolbox.features.map((feature: string) => (
-            <li class="flex items-center gap-1.5">
-              <Icon name="checkCircle" />
-
-              <span>{feature}</span>
-            </li>
-          ))
-        }
+      <!-- Features list -->
+      <ul class="mb-6 space-y-2">
+        {pricing.teamsPlan.features.map((feature: string) => (
+          <li class="flex items-center gap-1.5">
+            <Icon name="checkCircle" class="text-[#5EC7A1]" />
+            <span>{feature}</span>
+          </li>
+        ))}
       </ul>
-      <!-- CTA for purchasing the product -->
+      <!-- CTA button -->
       <a
-        href={pricing.professionalToolbox.purchaseLink}
-        class="block rounded-lg bg-orange-200 bg-opacity-50 px-8 py-3 text-center text-sm font-bold text-neutral-100 outline-none ring-orange-300 transition duration-100 hover:bg-orange-300 hover:bg-opacity-50 focus-visible:ring active:bg-orange-400 md:text-base"
-        >{pricing.professionalToolbox.purchaseBtnTitle}</a
+        href={pricing.teamsPlan.purchaseLink}
+        class="block rounded-lg bg-[#5EC7A1] text-gray-100 px-8 py-3 text-center text-sm font-bold transition hover:bg-[#3EB489] focus:ring-indigo-300 focus-visible:ring md:text-base"
       >
+        {pricing.teamsPlan.purchaseBtnTitle}
+      </a>
     </div>
-  </div>
-  <!-- Call to action for Enterprise Solutions -->
-  <div class="mt-8 flex items-center justify-center gap-x-3 md:mt-12">
-    <p class="text-sm text-neutral-600 dark:text-neutral-400">
-      {pricing.thirdOption}
-    </p>
 
-    <SecondaryCTA title={pricing.btnText} url="#" />
+    <!-- Enterprise Plan -->
+    <div
+      class="w-full max-w-sm rounded-xl bg-neutral-100 text-neutral-800 dark:bg-white/[.075] dark:text-neutral-200 p-6 shadow-md sm:w-1/3 lg:p-8"
+    >
+      <div class="mb-4">
+        <h3 class="text-2xl font-bold sm:text-3xl">
+          {pricing.enterprisePlan.name}
+        </h3>
+        <p class="text-[#5EC7A1]">
+          {pricing.enterprisePlan.description}
+        </p>
+      </div>
+
+      <div class="mb-4">
+        <span class="text-4xl font-bold">{pricing.enterprisePlan.price}</span>
+        <span class="ms-3 text-sm text-[#5EC7A1]">
+          {pricing.enterprisePlan.billingFrequency}
+        </span>
+      </div>
+      <!-- Features list -->
+      <ul class="mb-6 space-y-2">
+        {pricing.enterprisePlan.features.map((feature: string) => (
+          <li class="flex items-center gap-1.5">
+            <Icon name="checkCircle" class="text-[#5EC7A1]" />
+            <span>{feature}</span>
+          </li>
+        ))}
+      </ul>
+      <!-- CTA button -->
+      <a
+        href={pricing.enterprisePlan.purchaseLink}
+        class="block rounded-lg bg-[#5EC7A1] text-gray-100 px-8 py-3 text-center text-sm font-bold transition hover:bg-[#3EB489] focus:ring-indigo-300 focus-visible:ring md:text-base"
+      >
+        {pricing.enterprisePlan.purchaseBtnTitle}
+      </a>
+    </div>
   </div>
 </section>

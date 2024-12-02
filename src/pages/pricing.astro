@@ -1,7 +1,9 @@
 ---
 // Import the necessary components
+import PricingSection from "@/components/sections/pricing/PricingSection.astro";
 import MainLayout from "@/layouts/MainLayout.astro";
 import ContactSection from "@components/sections/misc/ContactSection.astro";
+import pricing from "@data/pricing.json";
 import { SITE } from "@data/constants";
 
 const pageTitle: string = `Contact | ${SITE.title}`;
@@ -28,5 +30,5 @@ const pageTitle: string = `Contact | ${SITE.title}`;
     "inLanguage": "en-US"
   }}
 >
-  <ContactSection />
+  <PricingSection pricing={pricing} />
 </MainLayout>
