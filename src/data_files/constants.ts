@@ -1,4 +1,4 @@
-import ogImageSrc from "@images/social.png";
+import ogImageSrc from "@images/assertive-ai-logo (8).png";
 
 export const SITE = {
   title: "Assertive - Autonomous Unit Test Generation with AI",
