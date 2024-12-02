@@ -20,8 +20,8 @@
   "teamsPlan": {
     "name": "Teams",
     "description": "Best for dev teams and larger scale projects",
-    "price": "$30K",
-    "billingFrequency": "per year",
+    "price": "Contact Us",
+    "billingFrequency": "",
     "features": [
       "Advanced test generation for entire projects",
       "Coverage Analytics, CI Pipeline",
