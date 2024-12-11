@@ -4,9 +4,7 @@ import FooterSocialLink from "@components/ui/links/FooterSocialLink.astro";
 import EmailFooterInput from "@components/ui/forms/input/EmailFooterInput.astro";
 import enStrings from "@utils/navigation.ts";
 import Icon from "@components/ui/icons/Icon.astro";
-import BrandLogo from "@components/BrandLogo.astro";
 import { SITE } from "@data/constants";
-import FooterLogo from "@/components/FooterLogo.astro";
 
 // Select the correct translation based on the page's lang prop:
 const strings = enStrings;
@@ -23,7 +21,12 @@ const sectionThreeContent: string = "Stay updated with the latest features and r
     <div class="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-5">
       <div class="col-span-full lg:col-span-1">
         <!-- Brand Logo -->
-        <FooterLogo  />
+        <a
+        class="flex-none rounded-lg text-xl font-bold outline-none ring-zinc-500 focus-visible:ring dark:ring-zinc-200 dark:focus:outline-none"
+        aria-label="Brand"
+      >
+        <img src="/src/images/assertive-ai-logo.png" alt="Brand Logo" class="h-auto w-64" />
+      </a>
       </div>
       <!-- An array of links for Product and Company sections -->
       {

@@ -2,7 +2,6 @@
 //Import relevant dependencies
 import NavLink from "@components/ui/links/NavLink.astro";
 import enStrings from "@utils/navigation.ts";
-import BrandLogo from "@components/BrandLogo.astro";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
 import ThemeIcon from "@/components/ThemeIcon.astro";
@@ -39,12 +38,12 @@ const homeUrl = "/";
     <div class="flex items-center justify-between">
       <!-- Brand logo -->
       <a
-        class="flex-none rounded-lg text-xl font-bold outline-none ring-zinc-500 focus-visible:ring dark:ring-zinc-200 dark:focus:outline-none"
-        href={homeUrl}
-        aria-label="Brand"
-      >
-        <BrandLogo class="h-auto w-24" />
-      </a>
+      class="flex-none rounded-lg text-xl font-bold outline-none ring-zinc-500 focus-visible:ring dark:ring-zinc-200 dark:focus:outline-none"
+      href={homeUrl}
+      aria-label="Brand"
+    >
+      <img src="/src/images/assertive-ai-logo.png" alt="Brand Logo" class="h-auto w-64" />
+    </a>
       <!-- Collapse toggle for smaller screens -->
       <div class="ml-auto mr-5 md:hidden">
         <button
