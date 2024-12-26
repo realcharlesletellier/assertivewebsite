@@ -5,12 +5,12 @@ import enStrings from "@utils/navigation.ts";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
 import ThemeIcon from "@/components/ThemeIcon.astro";
+import { Image } from "astro:assets";
+import BrandLogo from "/src/images/assertive-ai-logo.png";
 
 // Accept props for primary and secondary buttons
-const {   primaryBtn,
-  primaryBtnURL,
-  secondaryBtn,
-  secondaryBtnURL, } = Astro.props;
+const { primaryBtn, primaryBtnURL, secondaryBtn, secondaryBtnURL } =
+  Astro.props;
 
 // Define TypeScript interface for props
 interface Props {
@@ -31,19 +31,19 @@ const homeUrl = "/";
 >
   <!-- Navigation container -->
   <nav
-  class="container mx-auto flex items-center justify-between px-6 py-4 min-h-16 border-[black] bg-white/80 backdrop-blur-md dark:border-neutral-700/40 dark:bg-neutral-800/80 dark:backdrop-blur-md"
-  aria-label="Global"
->
-  <div class="flex items-center justify-between">
-    <!-- Brand logo -->
+    class="container mx-auto flex min-h-16 items-center justify-between border-[black] bg-white/80 px-6 py-4 backdrop-blur-md dark:border-neutral-700/40 dark:bg-neutral-800/80 dark:backdrop-blur-md"
+    aria-label="Global"
+  >
+    <div class="flex items-center justify-between">
+      <!-- Brand logo -->
       <a
-      class="flex-none rounded-lg text-xl font-bold outline-none ring-zinc-500 focus-visible:ring dark:ring-zinc-200 dark:focus:outline-none"
-      href={homeUrl}
-      aria-label="Brand"
-    >
-      <img src="/src/images/assertive-ai-logo.png" alt="Brand Logo" class="h-auto w-64" />
-    </a>
-  
+        class="flex-none rounded-lg text-xl font-bold outline-none ring-zinc-500 focus-visible:ring dark:ring-zinc-200 dark:focus:outline-none"
+        href={homeUrl}
+        aria-label="Brand"
+      >
+        <Image src={BrandLogo} alt="Assertive AI" class="h-auto w-64" />
+      </a>
+
       <!-- Collapse toggle for smaller screens -->
       <div class="ml-auto mr-5 md:hidden">
         <button
@@ -96,138 +96,143 @@ const homeUrl = "/";
     >
       <!-- Navigation links container -->
       <div
-        class="mt-5 flex flex-col gap-x-0 gap-y-4 md:mt-0 md:flex-row md:items-center md:justify-end md:gap-x-4 lg:gap-x-7 md:gap-y-0 md:ps-7"
+        class="mt-5 flex flex-col gap-x-0 gap-y-4 md:mt-0 md:flex-row md:items-center md:justify-end md:gap-x-4 md:gap-y-0 md:ps-7 lg:gap-x-7"
       >
         <!-- Navigation links and Authentication component -->
-        {strings.navBarLinks.map(link => (
-          <NavLink url={link.url} name={link.name} />
-        ))}
+        {
+          strings.navBarLinks.map((link) => (
+            <NavLink url={link.url} name={link.name} />
+          ))
+        }
 
         <!-- Call-to-Action Buttons -->
-        <div class="hidden md:flex items-center gap-4">
-          {primaryBtn && 
-            <PrimaryCTA title={primaryBtn} url={primaryBtnURL} />
+        <div class="hidden items-center gap-4 md:flex">
+          {primaryBtn && <PrimaryCTA title={primaryBtn} url={primaryBtnURL} />}
+          {
+            secondaryBtn && (
+              <SecondaryCTA title={secondaryBtn} url={secondaryBtnURL} />
+            )
           }
-          {secondaryBtn && 
-            <SecondaryCTA title={secondaryBtn} url={secondaryBtnURL} />
-          }
-        <!-- ThemeIcon component specifically for larger screens -->
-        <span class="hidden md:inline-block">
-          <ThemeIcon />
-        </span>
+          <!-- ThemeIcon component specifically for larger screens -->
+          <span class="hidden md:inline-block">
+            <ThemeIcon />
+          </span>
+        </div>
       </div>
     </div>
   </nav>
-</header>
-<!-- Theme Appearance script to manage light/dark modes -->
-<script is:inline>
-  const HSThemeAppearance = {
-    init() {
-      const defaultTheme = "default";
-      let theme = localStorage.getItem("hs_theme") || defaultTheme;
+  <!-- Theme Appearance script to manage light/dark modes -->
+  <script is:inline>
+    const HSThemeAppearance = {
+      init() {
+        const defaultTheme = "default";
+        let theme = localStorage.getItem("hs_theme") || defaultTheme;
 
-      if (document.querySelector("html").classList.contains("dark")) return;
-      this.setAppearance(theme);
-    },
-    _resetStylesOnLoad() {
-      const $resetStyles = document.createElement("style");
-      $resetStyles.innerText = `*{transition: unset !important;}`;
-      $resetStyles.setAttribute("data-hs-appearance-onload-styles", "");
-      document.head.appendChild($resetStyles);
-      return $resetStyles;
-    },
-    setAppearance(theme, saveInStore = true, dispatchEvent = true) {
-      const $resetStylesEl = this._resetStylesOnLoad();
+        if (document.querySelector("html").classList.contains("dark")) return;
+        this.setAppearance(theme);
+      },
+      _resetStylesOnLoad() {
+        const $resetStyles = document.createElement("style");
+        $resetStyles.innerText = `*{transition: unset !important;}`;
+        $resetStyles.setAttribute("data-hs-appearance-onload-styles", "");
+        document.head.appendChild($resetStyles);
+        return $resetStyles;
+      },
+      setAppearance(theme, saveInStore = true, dispatchEvent = true) {
+        const $resetStylesEl = this._resetStylesOnLoad();
 
-      if (saveInStore) {
-        localStorage.setItem("hs_theme", theme);
-      }
+        if (saveInStore) {
+          localStorage.setItem("hs_theme", theme);
+        }
 
-      if (theme === "auto") {
-        theme = window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "default";
-      }
+        if (theme === "auto") {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "default";
+        }
 
-      document.querySelector("html").classList.remove("dark");
-      document.querySelector("html").classList.remove("default");
-      document.querySelector("html").classList.remove("auto");
+        document.querySelector("html").classList.remove("dark");
+        document.querySelector("html").classList.remove("default");
+        document.querySelector("html").classList.remove("auto");
 
-      document
-        .querySelector("html")
-        .classList.add(this.getOriginalAppearance());
+        document
+          .querySelector("html")
+          .classList.add(this.getOriginalAppearance());
 
-      setTimeout(() => {
-        $resetStylesEl.remove();
+        setTimeout(() => {
+          $resetStylesEl.remove();
+        });
+
+        if (dispatchEvent) {
+          window.dispatchEvent(
+            new CustomEvent("on-hs-appearance-change", { detail: theme }),
+          );
+        }
+      },
+      getAppearance() {
+        let theme = this.getOriginalAppearance();
+        if (theme === "auto") {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "default";
+        }
+        return theme;
+      },
+      getOriginalAppearance() {
+        const defaultTheme = "default";
+        return localStorage.getItem("hs_theme") || defaultTheme;
+      },
+    };
+    HSThemeAppearance.init();
+
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", () => {
+        if (HSThemeAppearance.getOriginalAppearance() === "auto") {
+          HSThemeAppearance.setAppearance("auto", false);
+        }
       });
 
-      if (dispatchEvent) {
-        window.dispatchEvent(
-          new CustomEvent("on-hs-appearance-change", { detail: theme }),
-        );
-      }
-    },
-    getAppearance() {
-      let theme = this.getOriginalAppearance();
-      if (theme === "auto") {
-        theme = window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "default";
-      }
-      return theme;
-    },
-    getOriginalAppearance() {
-      const defaultTheme = "default";
-      return localStorage.getItem("hs_theme") || defaultTheme;
-    },
-  };
-  HSThemeAppearance.init();
-
-  window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", () => {
-      if (HSThemeAppearance.getOriginalAppearance() === "auto") {
-        HSThemeAppearance.setAppearance("auto", false);
-      }
-    });
-
-  window.addEventListener("load", () => {
-    const $clickableThemes = document.querySelectorAll(
-      "[data-hs-theme-click-value]",
-    );
-    const $switchableThemes = document.querySelectorAll(
-      "[data-hs-theme-switch]",
-    );
-
-    $clickableThemes.forEach(($item) => {
-      $item.addEventListener("click", () =>
-        HSThemeAppearance.setAppearance(
-          $item.getAttribute("data-hs-theme-click-value"),
-          true,
-          $item,
-        ),
+    window.addEventListener("load", () => {
+      const $clickableThemes = document.querySelectorAll(
+        "[data-hs-theme-click-value]",
       );
-    });
+      const $switchableThemes = document.querySelectorAll(
+        "[data-hs-theme-switch]",
+      );
 
-    $switchableThemes.forEach(($item) => {
-      $item.addEventListener("change", (e) => {
-        HSThemeAppearance.setAppearance(e.target.checked ? "dark" : "default");
+      $clickableThemes.forEach(($item) => {
+        $item.addEventListener("click", () =>
+          HSThemeAppearance.setAppearance(
+            $item.getAttribute("data-hs-theme-click-value"),
+            true,
+            $item,
+          ),
+        );
       });
 
-      $item.checked = HSThemeAppearance.getAppearance() === "dark";
-    });
-
-    window.addEventListener("on-hs-appearance-change", (e) => {
       $switchableThemes.forEach(($item) => {
-        $item.checked = e.detail === "dark";
+        $item.addEventListener("change", (e) => {
+          HSThemeAppearance.setAppearance(
+            e.target.checked ? "dark" : "default",
+          );
+        });
+
+        $item.checked = HSThemeAppearance.getAppearance() === "dark";
+      });
+
+      window.addEventListener("on-hs-appearance-change", (e) => {
+        $switchableThemes.forEach(($item) => {
+          $item.checked = e.detail === "dark";
+        });
       });
     });
-  });
-</script>
-<!--Import the necessary Collapse and Overlay plugins-->
-<!--https://preline.co/plugins/html/collapse.html-->
-<!--https://preline.co/plugins/html/overlay.html-->
-<script>
-  import "@preline/collapse/index.js";
-  import "@preline/overlay/index.js";
-</script>
+  </script>
+  <!--Import the necessary Collapse and Overlay plugins-->
+  <!--https://preline.co/plugins/html/collapse.html-->
+  <!--https://preline.co/plugins/html/overlay.html-->
+  <script>
+    import "@preline/collapse/index.js";
+    import "@preline/overlay/index.js";
+  </script>
+</header>
