@@ -5,13 +5,16 @@ import EmailFooterInput from "@components/ui/forms/input/EmailFooterInput.astro"
 import enStrings from "@utils/navigation.ts";
 import Icon from "@components/ui/icons/Icon.astro";
 import { SITE } from "@data/constants";
+import { Image } from "astro:assets";
+import BrandLogo from "/src/images/assertive-ai-logo.png";
 
 // Select the correct translation based on the page's lang prop:
 const strings = enStrings;
 
 // Define the variables that will be used in this component
 const sectionThreeTitle: string = "Stay up to date";
-const sectionThreeContent: string = "Stay updated with the latest features and releases.";
+const sectionThreeContent: string =
+  "Stay updated with the latest features and releases.";
 ---
 
 <footer class="w-full bg-[#f0f6f8] dark:bg-neutral-900">
@@ -22,11 +25,11 @@ const sectionThreeContent: string = "Stay updated with the latest features and r
       <div class="col-span-full lg:col-span-1">
         <!-- Brand Logo -->
         <a
-        class="flex-none rounded-lg text-xl font-bold outline-none ring-zinc-500 focus-visible:ring dark:ring-zinc-200 dark:focus:outline-none"
-        aria-label="Brand"
-      >
-        <img src="/src/images/assertive-ai-logo.png" alt="Brand Logo" class="h-auto w-64" />
-      </a>
+          class="flex-none rounded-lg text-xl font-bold outline-none ring-zinc-500 focus-visible:ring dark:ring-zinc-200 dark:focus:outline-none"
+          aria-label="Brand"
+        >
+          <Image src={BrandLogo} alt="Assertive AI" class="h-auto w-64" />
+        </a>
       </div>
       <!-- An array of links for Product and Company sections -->
       {
@@ -79,13 +82,12 @@ const sectionThreeContent: string = "Stay updated with the latest features and r
               <FooterSocialLink url={strings.socialLinks.x}
           ><Icon name="xFooter" /></FooterSocialLink
         >-->
-      <div>
-
+      <div></div>
+      <script>
+        const year = new Date().getFullYear();
+        const element = document.getElementById("current-year");
+        element!.innerText = year.toString();
+      </script>
     </div>
-    <script>
-      const year = new Date().getFullYear();
-      const element = document.getElementById("current-year");
-      element!.innerText = year.toString();
-    </script>
   </div>
 </footer>
