@@ -3,12 +3,17 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import compressor from "astro-compressor";
 import starlight from "@astrojs/starlight";
+import netlify from '@astrojs/netlify';
+
 
 // https://astro.build/config
 export default defineConfig({
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
   site: "https://assertiveai.ca",
   output: 'server',
+  adapter: netlify({
+    // You can pass options here if needed
+  }),
   // i18n: {
   //   defaultLocale: "en",
   //   locales: ["en", "fr"],
