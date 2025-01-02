@@ -25,19 +25,17 @@ const avatarSrcs: Array<string> = [
 ---
 
 <MainLayout>
-
   <!-- Add src={heroImage} -->
   <section class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-  <HeroSection
-    title=`Build Faster with AI Unit Test Generation`
-    subTitle="Generate thousands of unit tests at scale with Assertive AI."
-    primaryBtn="Try Now"
-    primaryBtnURL="/contact"
-    secondaryBtn="Book a demo"
-    secondaryBtnURL="/contact"
-    alt="Assertive AI Autonomous Unit Testing Tool Showcase"
-  />
-</section>
+    <HeroSection
+      title=`Build Faster with AI Unit Test Generation`
+      subTitle="Generate thousands of unit tests at scale with Assertive AI."
+      primaryBtn="Try Now"
+      primaryBtnURL="/contact"
+      secondaryBtnURL="/contact"
+      alt="Assertive AI Autonomous Unit Testing Tool Showcase"
+    />
+  </section>
 
   <!--   <ClientsSection
     title="Trusted by Industry Leaders"
@@ -45,48 +43,48 @@ const avatarSrcs: Array<string> = [
   /> -->
 
   <section class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-  <FeaturesGeneral
-    title="Accelerate development"
-    subTitle="Assertive AI addresses the critical challenge of test-related technical debt, empowering businesses to swiftly overcome it, and enabling teams to focus on what truly matters— driving development and shipping faster."
-    features={features}
-  />
-</section>
+    <FeaturesGeneral
+      title="Accelerate development"
+      subTitle="Assertive AI addresses the critical challenge of test-related technical debt, empowering businesses to swiftly overcome it, and enabling teams to focus on what truly matters— driving development and shipping faster."
+      features={features}
+    />
+  </section>
 
   <section class="w-full">
-  <FeaturesNavs
-    title=`Empowering teams with <span class="text-[#5EC7A1]">Assertive AI</span>, helping them focus on building instead of fixing.`
-    tabs={[
-      {
-        heading: "Accelerate your Unit Testing",
-        content:
-          "Writing hundreds of unit and regressions tests at scale in minutes instead of days, Assertive AI provides accurate, readable, and maintable tests with zero manual effort.",
-        svg: "tools",
-        src: tools,
-        alt: "Hundreds of tests being generated at scale with a timer",
-        first: true,
-      },
-      {
-        heading: "Never push broken code again",
-        content:
-          "Leverage Assertive AI's CI/CD integration to enable continuous unit testing and maintenance with every merge/pull request made.",
-        svg: "dashboard",
-        src: dashboard,
-        alt: "A screenshot or graphic representation of a merging PR with tests in the background and a screenshot of Assertive Tests vs Manual to show impact.",
-        second: true,
-      },
-      {
-        heading: "Always meet Coverage Requirements",
-        content:
-          "Collect, monitor and analyze coverage data, and profit from Assertive's guaranteed instant increase in code coverage.",
-        svg: "house",
-        src: gif,
-        alt: "Gray metal building frame near tower crane during daytime",
-      },
-    ]}
-  />
-</section>
+    <FeaturesNavs
+      title=`Empowering teams with <span class="text-[#5EC7A1]">Assertive AI</span>, helping them focus on building instead of fixing.`
+      tabs={[
+        {
+          heading: "Accelerate your Unit Testing",
+          content:
+            "Writing hundreds of unit and regressions tests at scale in minutes instead of days, Assertive AI provides accurate, readable, and maintable tests with zero manual effort.",
+          svg: "tools",
+          src: tools,
+          alt: "Hundreds of tests being generated at scale with a timer",
+          first: true,
+        },
+        {
+          heading: "Never push broken code again",
+          content:
+            "Leverage Assertive AI's CI/CD integration to enable continuous unit testing and maintenance with every merge/pull request made.",
+          svg: "dashboard",
+          src: dashboard,
+          alt: "A screenshot or graphic representation of a merging PR with tests in the background and a screenshot of Assertive Tests vs Manual to show impact.",
+          second: true,
+        },
+        {
+          heading: "Always meet Coverage Requirements",
+          content:
+            "Collect, monitor and analyze coverage data, and profit from Assertive's guaranteed instant increase in code coverage.",
+          svg: "house",
+          src: gif,
+          alt: "Gray metal building frame near tower crane during daytime",
+        },
+      ]}
+    />
+  </section>
 
-<!-- 
+  <!-- 
 <section class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
   <TestimonialsSection
     title="Fast-Track Your Projects"
@@ -116,12 +114,11 @@ const avatarSrcs: Array<string> = [
 </section>
 -->
 
-<section class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-  <PricingSection pricing={pricing} />
-</section>
+  <section class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+    <PricingSection pricing={pricing} />
+  </section>
 
-<section class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-  <FAQ title="Frequently<br />asked questions" faqs={faqs} />
-</section>
-
+  <section class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+    <FAQ title="Frequently<br />asked questions" faqs={faqs} />
+  </section>
 </MainLayout>

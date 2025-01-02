@@ -2,7 +2,6 @@
   "title": "Transparent Plans and Pricing",
   "subTitle": "Assertive's plans are tailored to suit the various needs of developers and teams at different levels - from individual builders to large-scale enterprises.",
   "badge": "Best value",
-
   "individualPlan": {
     "name": "Individual",
     "description": "Best for individual developers and small-scale projects",
@@ -13,10 +12,9 @@
       "100 tests per month",
       "Standard customer support"
     ],
-    "purchaseBtnTitle": "Buy Now",
+    "purchaseBtnTitle": "Buy now",
     "purchaseLink": "#"
   },
-
   "teamsPlan": {
     "name": "Teams",
     "description": "Best for dev teams and larger scale projects",
@@ -24,16 +22,15 @@
     "billingFrequency": "",
     "features": [
       "Advanced test generation for entire projects",
-      "Coverage Analytics, CI Pipeline",
+      "Coverage Analytics",
+      "CI Pipeline Integration",
       "Unlimited tests",
-      "Up to 150k lines of code (can purchase more)",
-      "Priority customer support"
-
+      "Up to 150k lines of code",
+      "Advanced customer support"
     ],
-    "purchaseBtnTitle": "Speak to an expert",
+    "purchaseBtnTitle": "Contact Us",
     "purchaseLink": "/contact"
   },
-
   "enterprisePlan": {
     "name": "Enterprise",
     "description": "Best for large scale use",
@@ -41,9 +38,11 @@
     "billingFrequency": "",
     "features": [
       "Advanced test generation for entire enterprise projects",
-      "Coverage Analytics, CI Pipeline",
+      "Coverage Analytics",
+      "CI Pipeline Integration",
+      "Test execution optimization",
       "Unlimited tests",
-      "Up to 750k lines of code (with option to purchase more)",
+      "Up to 500k lines of code",
       "Priority customer support"
     ],
     "purchaseBtnTitle": "Speak to an expert",

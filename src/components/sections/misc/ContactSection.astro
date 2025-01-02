@@ -1,5 +1,4 @@
 ---
-// Import the necessary dependencies.
 import AuthBtn from "@components/ui/buttons/AuthBtn.astro";
 import ContactIconBlock from "@components/ui/blocks/ContactIconBlock.astro";
 import TextInput from "@components/ui/forms/input/TextInput.astro";
@@ -7,7 +6,6 @@ import EmailContactInput from "@components/ui/forms/input/EmailContactInput.astr
 import TextAreaInput from "@components/ui/forms/input/TextAreaInput.astro";
 import Icon from "@components/ui/icons/Icon.astro";
 
-// Define the variables that will be used in this component
 const title: string = "Contact us";
 const subTitle: string =
   "Have questions or want to discuss integrating Assertive AI? Reach out, and let's discuss the perfect plan for you.";
@@ -31,30 +29,56 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
 
     <!-- Centered Form -->
     <div class="mt-12 flex flex-col items-center justify-center">
-      <div class="w-full max-w-lg rounded-xl p-4 sm:p-6 lg:p-8 bg-white shadow-md dark:bg-neutral-800">
-        <h2 class="mb-8 text-xl font-bold text-neutral-700 dark:text-neutral-300">
+      <div
+        class="w-full max-w-lg rounded-xl bg-white p-4 shadow-md dark:bg-neutral-800 sm:p-6 lg:p-8"
+      >
+        <h2
+          class="mb-8 text-xl font-bold text-neutral-700 dark:text-neutral-300"
+        >
           {formTitle}
         </h2>
         <!-- Form for user input with various input fields -->
-        <form>
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          class="form"
+        >
+          <!-- Honeypot field for spam protection -->
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="hidden">
+            <label>
+              Don’t fill this out if you're human: <input name="bot-field" />
+            </label>
+          </p>
+
           <div class="grid gap-4">
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <TextInput
                 id="hs-firstname-contacts"
                 label="First Name"
-                name="hs-firstname-contacts"
+                name="first_name"
+                required={true}
               />
               <TextInput
                 id="hs-lastname-contacts"
                 label="Last Name"
-                name="hs-firstname-contacts"
+                name="last_name"
+                required={true}
               />
             </div>
-            <EmailContactInput id="hs-email-contacts" />
+            <EmailContactInput
+              id="hs-email-contacts"
+              label="Email"
+              name="email"
+              required={true}
+            />
             <TextAreaInput
               id="hs-about-contacts"
               label="Details"
-              name="hs-about-contacts"
+              name="details"
+              required={true}
             />
           </div>
 
@@ -72,46 +96,14 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
     </div>
   </div>
 
-      <!--ContactIconBlocks are used to display different methods of contacting, including visiting office, email, browsing knowledgebase, and FAQ.
-      
-            <div class="divide-y divide-neutral-300 dark:divide-neutral-700">
-        <ContactIconBlock
-          heading="Knowledgebase"
-          content="Browse through all of our knowledgebase articles."
-          isLinkVisible={true}
-          linkTitle="Visit guides & tutorials"
-          linkURL="#"
-          isArrowVisible={true}
-          ><Icon name="question" />
-        </ContactIconBlock>
+  <!-- ContactIconBlocks are used to display different methods of contacting, including visiting office, email, browsing knowledgebase, and FAQ. -->
 
-        <ContactIconBlock
-          heading="FAQ"
-          content="Explore our FAQ for quick, clear answers to common queries."
-          isLinkVisible={true}
-          linkTitle="Visit FAQ"
-          linkURL="#"
-          isArrowVisible={true}
-          ><Icon name="chatBubble" />
-        </ContactIconBlock>
-
-        <ContactIconBlock
-          heading="Visit our office"
-          content="UK ScrewFast"
-          isAddressVisible={true}
-          addressContent="72 Union Terrace, E10 4PE London"
-          ><Icon name="mapPin" />
-        </ContactIconBlock>
-
-        <ContactIconBlock
-          heading="Contact us by email"
-          content="Prefer the written word? Drop us an email at"
-          isLinkVisible={true}
-          linkTitle="support@screwfast.uk"
-          linkURL="#"
-          ><Icon name="envelopeOpen" />
-        </ContactIconBlock>
-      </div>-->
-    </div>
-  </div>
+  <ContactIconBlock
+    heading="Contact us by email"
+    content="Prefer the written word? Drop us an email at"
+    isLinkVisible={true}
+    linkTitle="charles@assertiveai.ca"
+    linkURL="mailto:charles@assertiveai.ca"
+    ><Icon name="envelopeOpen" />
+  </ContactIconBlock>
 </section>

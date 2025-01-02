@@ -8,9 +8,7 @@ import starlight from "@astrojs/starlight";
 export default defineConfig({
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
   site: "https://assertiveai.ca",
-  image: {
-    domains: ["images.unsplash.com"],
-  },
+  output: 'server',
   // i18n: {
   //   defaultLocale: "en",
   //   locales: ["en", "fr"],
@@ -26,10 +24,9 @@ export default defineConfig({
     tailwind(),
     sitemap({
       i18n: {
-        defaultLocale: "en", // All urls that don't contain `fr` after `https://screwfast.uk/` will be treated as default locale, i.e. `en`
+        defaultLocale: "en",
         locales: {
           en: "en", // The `defaultLocale` value must present in `locales` keys
-          fr: "fr",
         },
       },
     }),
@@ -54,38 +51,6 @@ export default defineConfig({
         "zh-cn": { label: "简体中文", lang: "zh-CN" },
       },
       // https://starlight.astro.build/guides/sidebar/
-      sidebar: [
-        {
-          label: "Quick Start Guides",
-          translations: {
-            de: "Schnellstartanleitungen",
-            es: "Guías de Inicio Rápido",
-            fa: "راهنمای شروع سریع",
-            fr: "Guides de Démarrage Rapide",
-            ja: "クイックスタートガイド",
-            "zh-cn": "快速入门指南",
-          },
-          autogenerate: { directory: "guides" },
-        },
-        {
-          label: "Tools & Equipment",
-          items: [
-            { label: "Tool Guides", link: "tools/tool-guides/" },
-            { label: "Equipment Care", link: "tools/equipment-care/" },
-          ],
-        },
-        {
-          label: "Construction Services",
-          autogenerate: { directory: "construction" },
-        },
-        {
-          label: "Advanced Topics",
-          autogenerate: { directory: "advanced" },
-        },
-      ],
-      social: {
-        github: "https://github.com/mearashadowfax/ScrewFast",
-      },
       disable404Route: true,
       customCss: ["./src/assets/styles/starlight.css"],
       favicon: "/favicon.ico",
