@@ -10,7 +10,7 @@ import netlify from '@astrojs/netlify';
 export default defineConfig({
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
   site: "https://assertiveai.ca",
-  output: 'hybrid',
+  output: 'server',
   adapter: netlify({
     // You can pass options here if needed
   }),
@@ -25,11 +25,6 @@ export default defineConfig({
   //   },
   // },
   prefetch: true,
-  experimental: {
-    assets: false, // Explicitly disable the internal assets feature
-    clientPrerender: true,
-    directRenderScript: true,
-  },
   integrations: [
     tailwind(),
     sitemap({
@@ -92,8 +87,4 @@ export default defineConfig({
       brotli: true,
     }),
   ],
-  experimental: {
-    clientPrerender: true,
-    directRenderScript: true,
-  },
 });
