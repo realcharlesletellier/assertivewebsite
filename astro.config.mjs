@@ -11,9 +11,7 @@ export default defineConfig({
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
   site: "https://assertiveai.ca",
   output: 'server',
-  adapter: netlify({
-    // You can pass options here if needed
-  }),
+  adapter: netlify(),
   // i18n: {
   //   defaultLocale: "en",
   //   locales: ["en", "fr"],
