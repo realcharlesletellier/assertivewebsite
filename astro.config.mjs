@@ -4,6 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import compressor from "astro-compressor";
 import starlight from "@astrojs/starlight";
 import netlify from '@astrojs/netlify';
+import image from '@astrojs/image';
 
 
 // https://astro.build/config
@@ -23,7 +24,15 @@ export default defineConfig({
   //   },
   // },
   prefetch: true,
+  experimental: {
+    assets: false, // Disable the internal assets feature
+  },
   integrations: [
+    image({
+      service: {
+        entrypoint: '@astrojs/image/static', // Use "entrypoint" (lowercase)
+      },
+    }),
     tailwind(),
     sitemap({
       i18n: {
