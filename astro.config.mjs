@@ -4,15 +4,16 @@ import sitemap from "@astrojs/sitemap";
 import compressor from "astro-compressor";
 import starlight from "@astrojs/starlight";
 import netlify from '@astrojs/netlify';
-import image from '@astrojs/image';
 
 
 // https://astro.build/config
 export default defineConfig({
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
   site: "https://assertiveai.ca",
-  output: 'server',
-  adapter: netlify(),
+  output: 'hybrid',
+  adapter: netlify({
+    // You can pass options here if needed
+  }),
   // i18n: {
   //   defaultLocale: "en",
   //   locales: ["en", "fr"],
@@ -25,14 +26,11 @@ export default defineConfig({
   // },
   prefetch: true,
   experimental: {
-    assets: false, // Disable the internal assets feature
+    assets: false, // Explicitly disable the internal assets feature
+    clientPrerender: true,
+    directRenderScript: true,
   },
   integrations: [
-    image({
-      service: {
-        entrypoint: '@astrojs/image/static', // Use "entrypoint" (lowercase)
-      },
-    }),
     tailwind(),
     sitemap({
       i18n: {
