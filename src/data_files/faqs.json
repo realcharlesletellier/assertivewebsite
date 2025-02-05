@@ -3,11 +3,11 @@
   "faqs": [
     {
       "question": "What is Assertive?",
-      "answer": "Assertive is an autonomous testing tool that allows developers to easily test their software using advanced code analysis and reinforcement learning, yielding targeted unit tests with vastly better coverage than traditional methods. When potential code errors are detected, users are provided with a suggested patch."
+      "answer": "Assertive is an autonomous testing tool that allows developers to easily test their software using advanced code analysis and reinforcement learning, yielding targeted unit tests with vastly better coverage than traditional methods. When potential bugs are detected, users are provided with a suggested patch."
     },
     {
-      "question": "Can I upgrade from the Individual Plan to the Teams Plan?",
-      "answer": "Absolutely! You can upgrade to the Teams package at any time to access a wider range of high-quality features, enjoy priority customer support, and receive exclusive updates on upcoming features. Contact our team for a seamless transition."
+      "question": "Can I use this for free?",
+      "answer": "Absolutely! Assertive offers a free Community Edition that provides users with a limited number of tests and bug prevention suggestions. For more advanced features, we offer a paid subscription."
     },
     {
       "question": "What languages does Assertive work with?",
