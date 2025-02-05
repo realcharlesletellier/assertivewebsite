@@ -1,17 +1,25 @@
 {
-  "subTitle": "Ask us anything about our brand and products, and get factual responses.",
+  "subTitle": "Explore frequently asked questions for clear and concise answers about Assertive, our autonomous testing software",
   "faqs": [
     {
-      "question": "What types of tools are included in the Individual Plan?",
-      "answer": "The Individual plan features a license for the Standard Assertive AI CLI Tool, allowing users to generate 100 tests per month on a Class and Method scale, perfect for building personal projects you don't want breaking."
+      "question": "What is Assertive?",
+      "answer": "Assertive is an autonomous testing tool that allows developers to easily test their software using advanced code analysis and reinforcement learning, yielding targeted unit tests with vastly better coverage than traditional methods. When potential code errors are detected, users are provided with a suggested patch."
     },
     {
       "question": "Can I upgrade from the Individual Plan to the Teams Plan?",
-      "answer": "Absolutely! You can upgrade to the Teams Plan at any time to access a wider range of high-quality services, enjoy priority customer support, and receive exclusive updates. Contact our team for a seamless transition."
+      "answer": "Absolutely! You can upgrade to the Teams package at any time to access a wider range of high-quality features, enjoy priority customer support, and receive exclusive updates on upcoming features. Contact our team for a seamless transition."
     },
     {
-      "question": "What kind of customer support can I expect?",
-      "answer": "All our customers receive dedicated email support. With the Individual plan, you'll receive our standard support, while the Teams and Enterprise plans upgrade you to priority support, meaning faster response times and specialized assistance."
+      "question": "What languages does Assertive work with?",
+      "answer": "Assertive currently supports Java and Kotlin. We plan to add support for other languages in the near future, including Python, Typescript, Javascript and C#, along with personalized VSCode integration."
+    },
+    {
+      "question": "What data does Assertive use to generate tests?",
+      "answer": "Assertive only uses the code you provide it to perform extensive analysis to generate tests, deleting this data once complete. Assertive also records run-data from Community Edition users in a secure, encrypted database, which we leverage for debugging and product improvement."
+    },
+    {
+      "question": "Will my code be shared with others?",
+      "answer": "Never."
     }
   ]
 }

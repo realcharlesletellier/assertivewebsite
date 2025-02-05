@@ -10,10 +10,11 @@
     "features": [
       "Test generation at Class & Method scale",
       "100 tests per month",
+      "Bug prevention suggestions",
       "Standard customer support"
     ],
-    "purchaseBtnTitle": "Buy now",
-    "purchaseLink": "#"
+    "purchaseBtnTitle": "Join Waitlist",
+    "purchaseLink": "/contact"
   },
   "teamsPlan": {
     "name": "Teams",
@@ -24,7 +25,7 @@
       "Advanced test generation for entire projects",
       "Coverage Analytics",
       "CI Pipeline Integration",
-      "Unlimited tests",
+      "Unlimited tests & code suggestions",
       "Up to 150k lines of code",
       "Advanced customer support"
     ],
@@ -41,7 +42,7 @@
       "Coverage Analytics",
       "CI Pipeline Integration",
       "Test execution optimization",
-      "Unlimited tests",
+      "Unlimited tests & code suggestions",
       "Up to 500k lines of code",
       "Priority customer support"
     ],
